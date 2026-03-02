@@ -3,7 +3,7 @@ from typing import List
 from .models import Task
 
 
-class TaskStorage:
+class JSONTaskStorage:
 
     def __init__(self, file_path: str):
         self.file_path = file_path
