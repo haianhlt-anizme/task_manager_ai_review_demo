@@ -18,6 +18,5 @@ class TaskService:
     def complete_task(self, task_id: int):
         for task in self.tasks:
             if task.id == task_id:
-                task.completed = True
+                task.completed = not task.completed
                 self.storage.save_tasks(self.tasks)
-                return
