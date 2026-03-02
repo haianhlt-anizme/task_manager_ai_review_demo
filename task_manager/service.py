@@ -14,6 +14,7 @@ class TaskService:
         task = Task(new_id, title, False, description)
         self.tasks.append(task)
         self.storage.save_tasks(self.tasks)
+        print("DEBUG:", self.tasks)
 
     def complete_task(self, task_id: int):
         for task in self.tasks:
@@ -21,3 +22,4 @@ class TaskService:
                 task.completed = True
                 self.storage.save_tasks(self.tasks)
                 return
+        print("DEBUG:", self.tasks)
