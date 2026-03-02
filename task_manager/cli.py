@@ -11,6 +11,7 @@ class CLI:
             print("1. Add task")
             print("2. Complete task")
             print("3. Exit")
+            print("4. Delete task")
 
             choice = input("Choose: ")
 
@@ -24,3 +25,7 @@ class CLI:
 
             elif choice == "3":
                 break
+
+            elif choice == "4":
+                task_id = int(input("Task ID: "))
+                self.service.delete_task(task_id)

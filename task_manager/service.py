@@ -21,3 +21,7 @@ class TaskService:
                 task.completed = True
                 self.storage.save_tasks(self.tasks)
                 return
+            
+    def delete_task(self, task_id: int):
+        self.tasks = [t for t in self.tasks if t.id != task_id]
+        self.storage.save_tasks(self.tasks)
